@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="Raw_employee_Address" max_length="40" name="x_78939_dpl_raw_employee_address" sizeclass="132605" type="collection">
+        <element attributes="import_attribute_name=EMPLOYEE_ID,edge_encryption_enabled=true" label="EMPLOYEE_ID" max_length="40" name="u_employee_id" type="string"/>
+        <element attributes="import_attribute_name=PERMANENT_ADDRESS1,edge_encryption_enabled=true" label="PERMANENT_ADDRESS1" max_length="150" name="u_permanent_address1" type="string"/>
+        <element attributes="import_attribute_name=PERMANENT_ADDRESS2,edge_encryption_enabled=true" label="PERMANENT_ADDRESS2" max_length="89" name="u_permanent_address2" type="string"/>
+        <element attributes="import_attribute_name=PERMANENT_CITY,edge_encryption_enabled=true" label="PERMANENT_CITY" max_length="40" name="u_permanent_city" type="string"/>
+        <element attributes="import_attribute_name=PERMANENT_COUNTRY,edge_encryption_enabled=true" label="PERMANENT_COUNTRY" max_length="40" name="u_permanent_country" type="string"/>
+        <element attributes="import_attribute_name=PERMANENT_STATE,edge_encryption_enabled=true" label="PERMANENT_STATE" max_length="49" name="u_permanent_state" type="string"/>
+        <element attributes="import_attribute_name=PERMANENT_ZIP,edge_encryption_enabled=true" label="PERMANENT_ZIP" max_length="40" name="u_permanent_zip" type="string"/>
+        <element attributes="import_attribute_name=PRESENT_ADDRESS1,edge_encryption_enabled=true" label="PRESENT_ADDRESS1" max_length="111" name="u_present_address1" type="string"/>
+        <element attributes="import_attribute_name=PRESENT_ADDRESS2,edge_encryption_enabled=true" label="PRESENT_ADDRESS2" max_length="89" name="u_present_address2" type="string"/>
+        <element attributes="import_attribute_name=PRESENT_CITY,edge_encryption_enabled=true" label="PRESENT_CITY" max_length="40" name="u_present_city" type="string"/>
+        <element attributes="import_attribute_name=PRESENT_COUNTRY,edge_encryption_enabled=true" label="PRESENT_COUNTRY" max_length="40" name="u_present_country" type="string"/>
+        <element attributes="import_attribute_name=PRESENT_STATE,edge_encryption_enabled=true" label="PRESENT_STATE" max_length="40" name="u_present_state" type="string"/>
+        <element attributes="import_attribute_name=PRESENT_ZIP,edge_encryption_enabled=true" label="PRESENT_ZIP" max_length="40" name="u_present_zip" type="string"/>
+    </element>
+</database>

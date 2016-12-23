@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Matched Listing" max_length="40" name="x_78939_dpl_matched_listing" sizeclass="53773" type="collection">
+        <element label="Present City" max_length="50" name="city" type="string"/>
+        <element label="Comment" mandatory="true" max_length="500" name="comment" type="string"/>
+        <element label="Present Country" max_length="50" name="country" type="string"/>
+        <element label="DPL City" max_length="40" name="dpl_city" read_only="true" type="string"/>
+        <element label="DPL Country" max_length="40" name="dpl_country" read_only="true" type="string"/>
+        <element label="DPL Name" max_length="40" name="dpl_name" read_only="true" type="string"/>
+        <element label="DPL State" max_length="40" name="dpl_state" read_only="true" type="string"/>
+        <element label="DPL Street 1" max_length="150" name="dpl_street_1" read_only="true" type="string"/>
+        <element label="DPL Street 2" max_length="150" name="dpl_street_2" read_only="true" type="string"/>
+        <element display="true" label="Employee ID" max_length="40" name="employee_id" type="string"/>
+        <element label="Employee Name" max_length="150" name="employee_name" type="string"/>
+        <element label="Job Title" max_length="100" name="job_title" type="string"/>
+        <element label="Location" max_length="100" name="location" type="string"/>
+        <element label="Matched By" max_length="500" name="matched_by" read_only="true" type="string"/>
+        <element label="Permanent City" max_length="50" name="permanent_city" type="string"/>
+        <element label="Permanent Country" max_length="50" name="permanent_country" type="string"/>
+        <element label="Permanent State" max_length="50" name="permanent_state" type="string"/>
+        <element label="Permanent Street 1" max_length="150" name="permanent_street_1" type="string"/>
+        <element label="Permanent Street 2" max_length="150" name="permanent_street_2" type="string"/>
+        <element choice="3" default="Pending" label="Record Status" max_length="40" name="record_status" type="choice">
+            <choice>
+                <element label="Pending" sequence="0" value="Pending"/>
+                <element label="Released" sequence="1" value="Released"/>
+                <element label="Blocked" sequence="2" value="Blocked"/>
+            </choice>
+        </element>
+        <element label="Present State" max_length="50" name="state" type="string"/>
+        <element label="Present Street 1" max_length="150" name="street1" type="string"/>
+        <element label="Present Street 2" max_length="150" name="street2" type="string"/>
+        <element label="Supervisor" max_length="150" name="supervisor" type="string"/>
+    </element>
+</database>

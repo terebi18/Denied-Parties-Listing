@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_78939_dpl_employee_address</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Matched List - Initial Run Oth 1</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var usr = new GlideRecord('sys_user');
+
+usr.query()
+while (usr.next())
+	{
+	
+	var dpl = new GlideRecord('x_78939_dpl_denied_parties_listing');
+	
+	var gc_usr = dpl.addQuery('name',usr.name);
+	
+	var chk = "";
+	
+	chk = "'" + usr.name + "'";
+	
+	if(usr.first_name)
+		{
+			gc_usr.addOrCondition('name',usr.first_name)
+			
+			chk = chk + " or '" + usr.first_name + "'";
+		}
+	
+	if(usr.last_name)
+		{
+			gc_usr.addOrCondition('name',usr.last_name)
+			
+			chk = chk + " or '" + usr.last_name + "'";
+		}
+
+	dpl.query();
+	
+	dpl.next();
+	
+	if (dpl.getRowCount() > 0) //found in DPL
+	{
+		var gr2 = new GlideRecord('x_78939_dpl_matched_listing');
+		var qc1 = gr2.addQuery('employee_id',usr.employee_number);
+		
+		gr2.query()
+		
+		if (gr2.getRowCount() == 0)
+			{
+			var gr3 = new GlideRecord('x_78939_dpl_matched_listing');
+			gr3.initialize();
+			gr3.employee_name=usr.name;
+			gr3.employee_id = usr.employee_number;
+	// 		gr3.Street1 = usr.street;
+			gr3.job_title = usr.title;
+	// 		gr3.city = usr.city;
+			
+			var locationID = usr.location.getDisplayValue();
+			
+			gr3.location = locationID;
+			
+			var managerID = usr.manager.getDisplayValue();
+
+			gr3.supervisor = managerID;
+				
+			var gr4 = new GlideRecord('x_78939_dpl_employee_address');
+			var qc4 = gr4.addQuery('employee_id',usr.employee_number);
+				
+			gr4.query();
+			gr4.next();
+				
+			if (gr4.getRowCount() > 0)
+				{
+					gr3.country = gr4.present_country;
+					gr3.state = gr4.present_state;
+					gr3.street1 = gr4.present_street_1;
+					gr3.street2 = gr4.present_street_2;
+					gr3.city = gr4.present_city;
+					gr3.permanent_country = gr4.permanent_country;
+					gr3.permanent_state = gr4.permanent_state;
+					gr3.permanent_street_1 = gr4.permanent_address_1;
+					gr3.permanent_street_2 = gr4.permanent_address_2;
+					gr3.permanent_city = gr4.permanent_city;
+				}
+			
+	// 		gr3.country = usr.country;
+	// 		gr3.state = usr.state;
+			gr3.matched_by = "Matched By Name. '" + chk;
+			gr3.dpl_name = dpl.name;
+			gr3.dpl_street_1 = dpl.street1;
+			gr3.dpl_street_2 = dpl.street2;
+			gr3.dpl_city = dpl.city;
+			gr3.dpl_state = dpl.state;
+			gr3.dpl_country = dpl.country;
+			gr3.insert();
+		}
+	}
+	
+	
+}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-12-19 05:55:18</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>61913e190f332200b11e47ace1050e71</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Update Matched List - Initial Run Oth 1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Denied Parties Listing Application" source="x_78939_dpl">60fbc39f0f032200b11e47ace1050e37</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Denied Parties Listing Application">60fbc39f0f032200b11e47ace1050e37</sys_scope>
+        <sys_update_name>sys_script_61913e190f332200b11e47ace1050e71</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-12-19 06:12:16</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=61913e190f332200b11e47ace1050e71"/>
+</record_update>

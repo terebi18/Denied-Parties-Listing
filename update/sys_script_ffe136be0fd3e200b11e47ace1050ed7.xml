@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_78939_dpl_employee_address</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Matched Listing - Address changed</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	
+//check address
+if (current.present_address_1 !='' || current.present_address_2 != '' || current.permanent_address_1 != '' || current.permanent_address_2 != '')
+{
+	var addr = new GlideRecord('x_78939_dpl_denied_parties_listing');
+	
+	var chk = "";
+	
+	if (current.present_address_1)
+		{
+		var gc_addr = addr.addQuery('street1','CONTAINS',current.present_address_1);
+		gc_addr.addOrCondition('street2','CONTAINS',current.present_address_1);
+			
+		chk = "'" + current.present_address_1 + "'";
+
+		if (current.present_address_2)
+			{
+			gc_addr.addOrCondition('street1','CONTAINS',current.present_address_2);
+			gc_addr.addOrCondition('street2','CONTAINS',current.present_address_2);
+				
+			chk = chk + " or '" + current.present_address_2 + "'";
+		}
+			
+		if (current.permanent_address_1)
+			{
+			gc_addr.addOrCondition('street1','CONTAINS',current.permanent_address_1);
+			gc_addr.addOrCondition('street2','CONTAINS',current.permanent_address_1);
+				
+			chk = chk + " or '" + current.permanent_address_1 + "'";
+		}
+			
+		if (current.permanent_address_2)
+			{
+			gc_addr.addOrCondition('street1','CONTAINS',current.permanent_address_2);
+			gc_addr.addOrCondition('street2','CONTAINS',current.permanent_address_2);
+				
+			chk = chk + " or '" + current.permanent_address_2 + "'";
+		}
+	}
+	else
+		{
+		if (current.present_address_2)
+			{
+			var gc_addr2 = addr.addQuery('street1','CONTAINS',current.present_address_2);
+			gc_addr2.addOrCondition('street2','CONTAINS',current.present_address_2);
+				
+			chk = "'" + current.present_address_2 + "'";
+			
+			if (current.permanent_address_1)
+				{
+				gc_addr2.addOrCondition('street1','CONTAINS',current.permanent_address_1);
+				gc_addr2.addOrCondition('street2','CONTAINS',current.permanent_address_1);
+					
+				chk = chk + " or '" + current.permanent_address_1 + "'";
+			}
+			
+			if (current.permanent_address_2)
+				{
+				gc_addr2.addOrCondition('street1','CONTAINS',current.permanent_address_2);
+				gc_addr2.addOrCondition('street2','CONTAINS',current.permanent_address_2);
+					
+				chk = chk + " or '" + current.permanent_address_2 + "'";
+			}
+		}
+		else
+			{
+				if (current.permanent_address_1)
+					{
+						var gc_addr3 = addr.addQuery('street1','CONTAINS',current.permanent_address_1);
+						gc_addr3.addOrCondition('street2','CONTAINS',current.permanent_address_1);
+						
+						chk = "'" + current.permanent_address_1 + "'";
+						
+						if (current.permanent_address_2)
+						{
+						gc_addr3.addOrCondition('street1','CONTAINS',current.permanent_address_2);
+						gc_addr3.addOrCondition('street2','CONTAINS',current.permanent_address_2);}
+						
+						chk = chk + " or '" + current.permanent_address_2 + "'";
+					}
+				else
+					if (current.permanent_address_2)
+						{
+							var gc_addr4 = addr.addQuery('street1','CONTAINS',current.permanent_address_2);
+							gc_addr4.addOrCondition('street2','CONTAINS',current.permanent_address_2);
+							
+							chk = "'" + current.permanent_address_2 + "'";
+						}
+			}
+	}
+	
+	
+	
+	addr.query();
+	addr.next();
+	if (addr.getRowCount() > 0)
+		{
+		// 	var graddr3 = new GlideRecord('x_78939_dpl_matched_listing');
+		// 		graddr3.initialize();
+		
+		// 		graddr3.employee_id = addr.employee_id;
+		// 		graddr3.insert();
+		var graddr2 = new GlideRecord('x_78939_dpl_matched_listing');
+		var qcaddr1 = graddr2.addQuery('employee_id',current.employee_id);
+		
+		graddr2.query()
+		
+		if (graddr2.getRowCount() == 0)
+			{
+			var graddr3 = new GlideRecord('x_78939_dpl_matched_listing');
+			graddr3.initialize();
+			
+			graddr3.employee_id = current.employee_id;
+			
+			
+			var graddr4 = new GlideRecord('sys_user');
+			var qcaddr4 = graddr4.addQuery('employee_number',current.employee_id);
+			
+			graddr4.query();
+			graddr4.next();
+			
+			if (graddr4.getRowCount() > 0)
+				{
+				graddr3.employee_name = graddr4.name;
+				graddr3.job_title = graddr4.title;
+				var locationID2 = graddr4.location.getDisplayValue();
+				
+				graddr3.location = locationID2;
+				
+				var managerID2 = graddr4.manager.getDisplayValue();
+				
+				graddr3.supervisor = managerID2;
+			}
+			
+			graddr3.country = current.present_country;
+			graddr3.state = current.present_state;
+			graddr3.street1 = current.present_address_1;
+			graddr3.street2 = current.present_address_2;
+			graddr3.city = current.present_city;
+			graddr3.permanent_country = current.permanent_country;
+			graddr3.permanent_state = current.permanent_state;
+			graddr3.permanent_street_1 = current.permanent_address_1;
+			graddr3.permanent_street_2 = current.permanent_address_2;
+			graddr3.permanent_city = current.permanent_city;
+				
+			graddr3.matched_by = "Matched By Address. " + chk;
+				
+			graddr3.dpl_name = addr.name;
+			graddr3.dpl_street_1 = addr.street1;
+			graddr3.dpl_street_2 = addr.street2;
+			graddr3.dpl_city = addr.city;
+			graddr3.dpl_state = addr.state;
+			graddr3.dpl_country = addr.country;
+				
+			graddr3.insert();
+		}
+	}
+}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-11-29 01:29:44</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ffe136be0fd3e200b11e47ace1050ed7</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Update Matched Listing - Address changed</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Denied Parties Listing Application" source="x_78939_dpl">60fbc39f0f032200b11e47ace1050e37</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Denied Parties Listing Application">60fbc39f0f032200b11e47ace1050e37</sys_scope>
+        <sys_update_name>sys_script_ffe136be0fd3e200b11e47ace1050ed7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-12-07 09:22:02</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=ffe136be0fd3e200b11e47ace1050ed7"/>
+</record_update>

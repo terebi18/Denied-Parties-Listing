@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Matched Listing Comment History" max_length="40" name="x_78939_dpl_matched_listing_comment_history" type="collection">
+        <element display="true" label="Comment" max_length="40" name="comment" type="string"/>
+        <element label="Employee ID" max_length="40" name="employee_id" reference="x_78939_dpl_matched_listing" reference_qual="employee_idSTARTSWITH^EQ" reference_qual_condition="employee_idSTARTSWITH^EQ" type="reference"/>
+        <element label="Record Status" max_length="40" name="record_status" type="string"/>
+        <index name="index">
+            <element name="employee_id"/>
+        </index>
+    </element>
+</database>

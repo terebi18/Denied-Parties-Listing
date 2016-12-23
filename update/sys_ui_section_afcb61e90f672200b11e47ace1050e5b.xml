@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="Matched Denied Parties Listing" section_id="afcb61e90f672200b11e47ace1050e5b" sys_domain="global" table="x_78939_dpl_matched_listing" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dpl_name</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:18:58</sys_created_on>
+            <sys_id>d42d2de90f672200b11e47ace1050e10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Matched Denied Parties Listing" display_value="Matched Denied Parties Listing" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">afcb61e90f672200b11e47ace1050e5b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:18:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dpl_street_1</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:18:59</sys_created_on>
+            <sys_id>182d2de90f672200b11e47ace1050e10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Matched Denied Parties Listing" display_value="Matched Denied Parties Listing" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">afcb61e90f672200b11e47ace1050e5b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dpl_street_2</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:18:59</sys_created_on>
+            <sys_id>582d2de90f672200b11e47ace1050e10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Matched Denied Parties Listing" display_value="Matched Denied Parties Listing" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">afcb61e90f672200b11e47ace1050e5b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dpl_city</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:18:59</sys_created_on>
+            <sys_id>982d2de90f672200b11e47ace1050e10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Matched Denied Parties Listing" display_value="Matched Denied Parties Listing" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">afcb61e90f672200b11e47ace1050e5b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dpl_state</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:18:59</sys_created_on>
+            <sys_id>d82d2de90f672200b11e47ace1050e10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Matched Denied Parties Listing" display_value="Matched Denied Parties Listing" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">afcb61e90f672200b11e47ace1050e5b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dpl_country</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:18:59</sys_created_on>
+            <sys_id>1c2d2de90f672200b11e47ace1050e10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Matched Denied Parties Listing" display_value="Matched Denied Parties Listing" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">afcb61e90f672200b11e47ace1050e5b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Matched Denied Parties Listing</caption>
+            <header>false</header>
+            <name>x_78939_dpl_matched_listing</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-12-07 09:13:11</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>afcb61e90f672200b11e47ace1050e5b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Matched Denied Parties Listing</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Denied Parties Listing Application" source="x_78939_dpl">60fbc39f0f032200b11e47ace1050e37</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Denied Parties Listing Application">60fbc39f0f032200b11e47ace1050e37</sys_scope>
+            <sys_update_name>sys_ui_section_afcb61e90f672200b11e47ace1050e5b</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-12-07 09:13:11</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

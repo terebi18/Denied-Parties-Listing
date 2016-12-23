@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="Address" section_id="cdc465cd0f5b6200b11e47ace1050e1f" sys_domain="global" table="x_78939_dpl_matched_listing" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>street1</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>217cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>street2</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>617cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>city</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>a17cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>e17cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>country</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>257cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>permanent_street_1</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>657cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>permanent_street_2</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>a57cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>permanent_city</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>e57cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>permanent_state</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>297cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>permanent_country</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-28 07:23:49</sys_created_on>
+            <sys_id>697cf6e20fd3e200b11e47ace1050e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_78939_dpl_matched_listing" sys_domain="global" view="Default view">cdc465cd0f5b6200b11e47ace1050e1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-28 07:23:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Address</caption>
+            <header>false</header>
+            <name>x_78939_dpl_matched_listing</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-11-23 09:09:47</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>cdc465cd0f5b6200b11e47ace1050e1f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Address</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Denied Parties Listing Application" source="x_78939_dpl">60fbc39f0f032200b11e47ace1050e37</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Denied Parties Listing Application">60fbc39f0f032200b11e47ace1050e37</sys_scope>
+            <sys_update_name>sys_ui_section_cdc465cd0f5b6200b11e47ace1050e1f</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-11-23 09:09:47</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="iterativeDelete=true,ref_ac_columns_search=true,ref_auto_completer=AJAXTableCompleter,ref_ac_columns=email,ref_ac_order_by=name,display_image=photo,text_index_translations" create_roles="user_admin" defaultsort="-1" dynamic_creation_script="dynamicUserCreation(current, value);" label="User" max_length="40" name="sys_user" sizeclass="9691" text_index="true" type="collection">
+        <element label="Present Address1" max_length="150" name="x_78939_dpl_present_address1" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_78939_dpl_denied_parties_listing</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Matched Listing</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+
+//check name	
+var usr = new GlideRecord('sys_user');
+
+
+var gc_usr = usr.addQuery('name','CONTAINS',current.name);
+gc_usr.addOrCondition('first_name','CONTAINS',current.name);
+gc_usr.addOrCondition('last_name','CONTAINS',current.name);
+
+usr.query()
+while (usr.next())
+	{
+	
+	var gr2 = new GlideRecord('x_78939_dpl_matched_listing');
+	var qc1 = gr2.addQuery('employee_id',usr.employee_number);
+	
+	gr2.query()
+	
+	if (gr2.getRowCount() == 0)
+		{
+		var gr3 = new GlideRecord('x_78939_dpl_matched_listing');
+		gr3.initialize();
+		gr3.employee_name=usr.name;
+		gr3.employee_id = usr.employee_number;
+// 		gr3.Street1 = usr.street;
+		gr3.job_title = usr.title;
+// 		gr3.city = usr.city;
+		
+		var locationID = usr.location.getDisplayValue();
+		
+		gr3.location = locationID;
+		
+		var managerID = usr.manager.getDisplayValue();
+
+		gr3.supervisor = managerID;
+			
+		var gr4 = new GlideRecord('x_78939_dpl_employee_address');
+		var qc4 = gr4.addQuery('employee_id',usr.employee_number);
+			
+		gr4.query();
+		gr4.next();
+			
+		if (gr4.getRowCount() > 0)
+			{
+				gr3.country = gr4.present_country;
+				gr3.state = gr4.present_state;
+				gr3.street1 = gr4.present_street_1;
+				gr3.street2 = gr4.present_street_2;
+				gr3.city = gr4.present_city;
+				gr3.permanent_country = gr4.permanent_country;
+				gr3.permanent_state = gr4.permanent_state;
+				gr3.permanent_street_1 = gr4.permanent_address_1;
+				gr3.permanent_street_2 = gr4.permanent_address_2;
+				gr3.permanent_city = gr4.permanent_city;
+ 			}
+		
+// 		gr3.country = usr.country;
+// 		gr3.state = usr.state;
+		gr3.matched_by = "Matched By Name. '" + current.name + "'";
+		gr3.dpl_name = current.name;
+		gr3.dpl_street_1 = current.street1;
+		gr3.dpl_street_2 = current.street2;
+		gr3.dpl_city = current.city;
+		gr3.dpl_state = current.state;
+		gr3.dpl_country = current.country;
+			
+		gr3.insert();
+	}
+}
+
+	
+
+//check address
+if (current.street1 !='' || current.street2 != '')
+{
+	var addr = new GlideRecord('x_78939_dpl_employee_address');
+	
+	var chk = "";
+	
+	if (current.street1)
+		{
+		var gc_addr = addr.addQuery('present_address_1','CONTAINS',current.street1);
+		gc_addr.addOrCondition('present_address_2','CONTAINS',current.street1);
+		gc_addr.addOrCondition('permanent_address_1','CONTAINS',current.street1);
+		gc_addr.addOrCondition('permanent_address_2','CONTAINS',current.street1);
+			
+		chk = "'" + current.street1 + "'";
+			
+		if (current.street2)
+			{
+			gc_addr.addOrCondition('present_address_1','CONTAINS',current.street2);
+			gc_addr.addOrCondition('present_address_2','CONTAINS',current.street2);
+			gc_addr.addOrCondition('permanent_address_1','CONTAINS',current.street2);
+			gc_addr.addOrCondition('permanent_address_2','CONTAINS',current.street2);
+				
+			chk = chk + " or '" + current.street2 + "'";
+		}
+	}
+	else
+		{
+		if (current.street2)
+			{
+			var gc_addr = addr.addQuery('present_address_1','CONTAINS',current.street2);
+			gc_addr.addOrCondition('present_address_2','CONTAINS',current.street2);
+			gc_addr.addOrCondition('permanent_address_1','CONTAINS',current.street2);
+			gc_addr.addOrCondition('permanent_address_2','CONTAINS',current.street2);
+				
+			chk = "'" + current.street2 + "'";
+		}
+	}
+	
+	
+	
+	addr.query()
+	while (addr.next())
+		{
+		// 	var graddr3 = new GlideRecord('x_78939_dpl_matched_listing');
+		// 		graddr3.initialize();
+		
+		// 		graddr3.employee_id = addr.employee_id;
+		// 		graddr3.insert();
+		var graddr2 = new GlideRecord('x_78939_dpl_matched_listing');
+		var qcaddr1 = graddr2.addQuery('employee_id',addr.employee_id);
+		
+		graddr2.query()
+		
+		if (graddr2.getRowCount() == 0)
+			{
+			var graddr3 = new GlideRecord('x_78939_dpl_matched_listing');
+			graddr3.initialize();
+			
+			graddr3.employee_id = addr.employee_id;
+			
+			
+			var graddr4 = new GlideRecord('sys_user');
+			var qcaddr4 = graddr4.addQuery('employee_number',addr.employee_id);
+			
+			graddr4.query();
+			graddr4.next();
+			
+			if (graddr4.getRowCount() > 0)
+				{
+				graddr3.employee_name = graddr4.name;
+				graddr3.job_title = graddr4.title;
+				var locationID2 = graddr4.location.getDisplayValue();
+				
+				graddr3.location = locationID2;
+				
+				var managerID2 = graddr4.manager.getDisplayValue();
+				
+				graddr3.supervisor = managerID2;
+			}
+			
+			graddr3.country = addr.present_country;
+			graddr3.state = addr.present_state;
+			graddr3.street1 = addr.present_address_1;
+			graddr3.street2 = addr.present_address_2;
+			graddr3.city = addr.present_city;
+			graddr3.permanent_country = addr.permanent_country;
+			graddr3.permanent_state = addr.permanent_state;
+			graddr3.permanent_street_1 = addr.permanent_address_1;
+			graddr3.permanent_street_2 = addr.permanent_address_2;
+			graddr3.permanent_city = addr.permanent_city;
+				
+			graddr3.matched_by = "Matched By Address. " + chk;
+			graddr3.dpl_name = current.name;
+			graddr3.dpl_street_1 = current.street1;
+			graddr3.dpl_street_2 = current.street2;
+			graddr3.dpl_city = current.city;
+			graddr3.dpl_state = current.state;
+			graddr3.dpl_country = current.country;
+				
+			graddr3.insert();
+		}
+	}
+}
+	
+	
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-11-21 07:17:40</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f4c3f2540fdf2200b11e47ace1050e22</sys_id>
+        <sys_mod_count>94</sys_mod_count>
+        <sys_name>Update Matched Listing</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Denied Parties Listing Application" source="x_78939_dpl">60fbc39f0f032200b11e47ace1050e37</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Denied Parties Listing Application">60fbc39f0f032200b11e47ace1050e37</sys_scope>
+        <sys_update_name>sys_script_f4c3f2540fdf2200b11e47ace1050e22</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-12-19 02:46:01</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f4c3f2540fdf2200b11e47ace1050e22"/>
+</record_update>
